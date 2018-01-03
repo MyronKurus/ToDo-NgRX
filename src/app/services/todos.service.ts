@@ -5,6 +5,7 @@ import 'rxjs/add/operator/mapTo';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../models/app-state.model';
 import { addTodo, removeTodo } from '../actions/todo.actions';
+import {Todo} from '../models/todo.model';
 
 @Injectable()
 export class TodosService {
@@ -12,7 +13,7 @@ export class TodosService {
   constructor(private store: Store<IAppState>) {
   }
 
-  getTodos(): Observable<IAppState> {
+  getTodos(): Observable<Todo[]> {
     return this.store.select('todos');
   }
 

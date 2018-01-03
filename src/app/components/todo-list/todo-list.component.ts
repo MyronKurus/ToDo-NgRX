@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
-import { IAppState } from '../../models/app-state.model';
+import {Todo} from '../../models/todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +9,7 @@ import { IAppState } from '../../models/app-state.model';
 })
 export class TodoListComponent implements OnInit {
 
-  todolist: IAppState;
+  todolist: Todo[];
 
   constructor(private todoService: TodosService) {}
 

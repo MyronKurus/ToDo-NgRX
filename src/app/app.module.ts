@@ -1,3 +1,4 @@
+///<reference path="effects/permission.effects.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
@@ -10,6 +11,10 @@ import { todos } from './reducers/todo.reducer';
 import { TodosEffects } from './effects/todos.effects';
 import { TodosService } from './services/todos.service';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { CheckerComponent } from './components/checker/checker.component';
+import {PermissionService} from './services/permission.service';
+import {permissions} from './reducers/permission.reducer';
+import {PermissionEffects} from './effects/permission.effects';
 
 
 @NgModule({
@@ -17,16 +22,17 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
     AppComponent,
     TodoListComponent,
     TodoItemComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    CheckerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.provideStore({todos}),
-    EffectsModule.run(TodosEffects),
+    StoreModule.provideStore({todos, permissions}),
+    EffectsModule.run(TodosEffects)
   ],
-  providers: [ TodosService ],
+  providers: [ TodosService, PermissionService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

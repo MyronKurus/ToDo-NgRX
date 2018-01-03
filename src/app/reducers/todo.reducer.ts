@@ -1,4 +1,5 @@
 import {S_ADD_TODO, S_REMOVE_TODO} from '../actions/todo.actions';
+import {Todo} from '../models/todo.model';
 
 function filterByID(statearr, obj) {
   const arr = [...statearr];
@@ -10,7 +11,7 @@ function filterByID(statearr, obj) {
   return arr;
 }
 
-const defaultList = [
+const defaultList: Todo[] = [
   {id: 1, title: 'Learn ngrx/store', completed: false},
   {id: 2, title: 'Learn ngrx/effects', completed: false}
 ];
