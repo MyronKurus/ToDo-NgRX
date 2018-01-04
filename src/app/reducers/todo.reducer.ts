@@ -1,4 +1,4 @@
-import {S_ADD_TODO, S_REMOVE_TODO} from '../actions/todo.actions';
+import {S_ADD_TODO, S_ADD_TODO_ERROR, S_REMOVE_TODO, S_REMOVE_TODO_ERROR} from '../actions/todo.actions';
 import {Todo} from '../models/todo.model';
 
 function filterByID(statearr, obj) {
@@ -23,6 +23,12 @@ export function todos(state = defaultList, { type, payload }) {
       return state;
     case S_REMOVE_TODO:
       return filterByID(state, payload);
+    case S_ADD_TODO_ERROR:
+      console.log('You don\'t have permission for this action!');
+      return state;
+    case S_REMOVE_TODO_ERROR:
+      console.log('You don\'t have permission for this action!');
+      return state;
     default:
       return state;
   }

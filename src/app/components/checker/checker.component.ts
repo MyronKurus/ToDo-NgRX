@@ -15,7 +15,6 @@ export class CheckerComponent implements OnChanges {
     this.permissionService.getPermissions().subscribe(items => {
       this.canAdd = items.canAdd;
       this.canRemove = items.canRemove;
-      console.log(this.canAdd, this.canRemove);
     });
   }
 
