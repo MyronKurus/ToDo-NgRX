@@ -9,7 +9,7 @@ import {TodosService} from '../../services/todos.service';
 export class AddTodoComponent {
   constructor(private todosService: TodosService) { }
 
-  onAddTodo(title: string) {
+  onAddTodo(title: string): void {
     this.todosService.createTodo(title);
   }
 

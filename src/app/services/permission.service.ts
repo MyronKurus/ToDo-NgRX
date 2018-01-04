@@ -8,7 +8,7 @@ import {switchAdd, switchRemove} from '../actions/permission.actions';
 @Injectable()
 export class PermissionService {
 
-  perms;
+  perms: Permissions;
 
   constructor(private store: Store<IAppState>) {
   }
@@ -17,16 +17,16 @@ export class PermissionService {
     return this.store.select('permissions');
   }
 
-  recievedPermissions() {
+  recievedPermissions(): Permissions {
     this.getPermissions().subscribe(params => this.perms = params);
     return this.perms;
   }
 
-  switchAddPermission() {
+  switchAddPermission(): void {
     this.store.dispatch(switchAdd());
   }
 
-  switchRemovePermission() {
+  switchRemovePermission(): void {
     this.store.dispatch(switchRemove());
   }
 

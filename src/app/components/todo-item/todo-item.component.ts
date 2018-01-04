@@ -12,7 +12,7 @@ export class TodoItemComponent {
   @Input() todo;
   constructor(private todosService: TodosService) {}
 
-  removeTodo( id ) {
+  removeTodo(id): void {
     this.todosService.removeTodo(id);
   }
 }

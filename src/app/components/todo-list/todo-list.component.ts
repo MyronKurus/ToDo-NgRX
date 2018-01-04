@@ -13,7 +13,7 @@ export class TodoListComponent implements OnInit {
 
   constructor(private todoService: TodosService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.todoService.getTodos().subscribe(items => {
       this.todolist = items;
     });

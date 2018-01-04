@@ -6,7 +6,7 @@ import {PermissionService} from '../../services/permission.service';
   templateUrl: './checker.component.html',
   styleUrls: ['./checker.component.css']
 })
-export class CheckerComponent implements OnChanges {
+export class CheckerComponent {
 
   canAdd;
   canRemove;
@@ -18,15 +18,11 @@ export class CheckerComponent implements OnChanges {
     });
   }
 
-  ngOnChanges() {
-
-  }
-
-  onAddChange() {
+  onAddChange(): void {
     this.permissionService.switchAddPermission();
   }
 
-  onRemoveChange() {
+  onRemoveChange(): void {
     this.permissionService.switchRemovePermission();
   }
 

@@ -17,13 +17,13 @@ export class TodosService {
     return this.store.select('todos');
   }
 
-  createTodo(title: string) {
+  createTodo(title: string): void {
     const num = (Math.random() * 100).toFixed(0);
     const todoItem = {id: num, title, completed:  false};
     this.store.dispatch(addTodo(todoItem));
   }
 
-  removeTodo(id: number) {
+  removeTodo(id: number): void {
     this.store.dispatch(removeTodo(id));
   }
 

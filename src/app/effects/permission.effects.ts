@@ -9,8 +9,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class PermissionEffects {
-  constructor(private actions$: Actions) {
-  }
+  constructor(private actions$: Actions) {}
 
   @Effect() switchAdd$ = this.actions$
     .ofType(U_SWITCH_ADD)

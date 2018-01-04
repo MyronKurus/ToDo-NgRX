@@ -1,5 +1,5 @@
-import {S_ADD_TODO, S_ADD_TODO_ERROR, S_REMOVE_TODO, S_REMOVE_TODO_ERROR} from '../actions/todo.actions';
-import {Todo} from '../models/todo.model';
+import { S_ADD_TODO, S_ADD_TODO_ERROR, S_REMOVE_TODO, S_REMOVE_TODO_ERROR } from '../actions/todo.actions';
+import { Todo } from '../models/todo.model';
 
 function filterByID(statearr, obj) {
   const arr = [...statearr];

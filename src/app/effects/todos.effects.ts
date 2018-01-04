@@ -14,8 +14,7 @@ import {PermissionService} from '../services/permission.service';
 
 @Injectable()
 export class TodosEffects {
-  constructor( private actions$: Actions, private permissionService: PermissionService) {
-  }
+  constructor( private actions$: Actions, private permissionService: PermissionService) {}
 
   @Effect() addTodo$ = this.actions$
     .ofType(U_ADD_TODO)
