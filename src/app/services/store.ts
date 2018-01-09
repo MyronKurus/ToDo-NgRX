@@ -17,6 +17,7 @@ export class StoreService {
 
 export class ActionService {
   static getStore () {
+    console.log(storeInstance);
     return storeInstance;
   }
 }

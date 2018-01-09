@@ -27,7 +27,7 @@ export class TodosService {
     // this.store.dispatch(addTodo(todoItem));
   }
 
-  @dispatcher(U_ADD_TODO)
+  @UserAction(U_ADD_TODO)
   removeTodo(id: number): void {
     // this.store.dispatch(removeTodo(id));
   }
@@ -48,13 +48,10 @@ export class TodosService {
 
 
 
-function dispatcher(type: string) {
-
-  const store = ActionService.getStore();
+function UserAction(type: string) {
+  ActionService.getStore();
 
   return function (target: any, key: string, descriptor: PropertyDescriptor) {
-    descriptor.value = (...args: any[]) => {
-      store.dispatch(removeTodo(1));
-    };
+
   };
 }
