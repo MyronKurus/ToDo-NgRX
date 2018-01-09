@@ -13,6 +13,7 @@ export const S_REMOVE_TODO_ERROR = 'S_REMOVE_TODO_ERROR';
 export function addTodo(todo): Action {
   return {
     type: U_ADD_TODO,
+    // requirements: []
     payload: { ...todo}
   };
 }
