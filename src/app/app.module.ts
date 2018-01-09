@@ -13,6 +13,8 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { CheckerComponent } from './components/checker/checker.component';
 import { PermissionService } from './services/permission.service';
 import { permissions } from './reducers/permission.reducer';
+import { ActionService, StoreService } from './services/store';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { permissions } from './reducers/permission.reducer';
     StoreModule.provideStore({todos, permissions}),
     EffectsModule.run(TodosEffects)
   ],
-  providers: [ TodosService, PermissionService ],
+  providers: [ TodosService, PermissionService, StoreService, ActionService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
