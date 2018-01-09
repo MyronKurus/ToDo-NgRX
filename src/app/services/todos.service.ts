@@ -6,7 +6,7 @@ import {Action, Store} from '@ngrx/store';
 import {IAppState} from '../models/app-state.model';
 import {addTodo, removeTodo, U_ADD_TODO} from '../actions/todo.actions';
 import {Todo} from '../models/todo.model';
-import {ActionService, StoreService} from './store';
+import {ActionService, StoreService, UserAction} from './store';
 
 // let storeInstance;
 
@@ -48,10 +48,10 @@ export class TodosService {
 
 
 
-function UserAction(type: string) {
-  ActionService.getStore();
-
-  return function (target: any, key: string, descriptor: PropertyDescriptor) {
-
-  };
-}
+// function UserAction(type: string) {
+//   ActionService.getStore();
+//
+//   return function (target: any, key: string, descriptor: PropertyDescriptor) {
+//
+//   };
+// }

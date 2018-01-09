@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Store} from '@ngrx/store';
+import {Action, Store} from '@ngrx/store';
 import {IAppState} from '../models/app-state.model';
 
 let storeInstance;
+
 
 @Injectable()
 export class StoreService {
@@ -10,14 +11,29 @@ export class StoreService {
     storeInstance = store;
   }
 
+
+
   public select(key: string) {
     return this.store.select(key);
   }
 }
 
+
+
 export class ActionService {
-  static getStore () {
-    console.log(storeInstance);
-    return storeInstance;
+
+  protected static dispatch(action: Action) {
+    if (!storeInstance) { return false; }
+
+    storeInstance.dispatch();
   }
+}
+
+export function UserAction(type: string) {
+  console.log(storeInstance);
+  // ActionService.getStore();
+
+  return function (target: any, key: string, descriptor: PropertyDescriptor) {
+
+  };
 }
