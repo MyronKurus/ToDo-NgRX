@@ -11,6 +11,11 @@ function filterByID(statearr, obj) {
   return arr;
 }
 
+function createTodo(obj) {
+  const num = (Math.random() * 100).toFixed(0);
+  return {id: num, ...obj, completed:  false};
+}
+
 const defaultList: Todo[] = [
   {id: 1, title: 'Learn ngrx/store', completed: false},
   {id: 2, title: 'Learn ngrx/effects', completed: false}
@@ -19,7 +24,8 @@ const defaultList: Todo[] = [
 export function todos(state = defaultList, { type, payload }) {
   switch ( type ) {
     case S_ADD_TODO:
-      state.push(payload);
+      const todoItem: Todo = createTodo(payload);
+      state.push(todoItem);
       return state;
     case S_REMOVE_TODO:
       return filterByID(state, payload);

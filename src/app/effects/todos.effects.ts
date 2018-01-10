@@ -23,7 +23,9 @@ export class TodosEffects {
           type: U_DISPATCH_ADD_TODO,
           payload: {
             perms: this.permissionService.recievedPermissions(),
-            data: action.payload
+            data: {
+              title: action.payload[0]
+            }
           }
         });
     });
@@ -45,7 +47,9 @@ export class TodosEffects {
           type: U_DISPATCH_REMOVE_TODO,
           payload: {
             perms: this.permissionService.recievedPermissions(),
-            data: action.payload
+            data: {
+              id: action.payload[0]
+            }
           }
         });
     });
